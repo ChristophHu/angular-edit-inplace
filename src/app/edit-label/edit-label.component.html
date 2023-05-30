@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Editable</th>
+    </tr>
+    <tr *ngFor="let entity of entities; index as index">
+        <td>
+            <editable (update)="updateField(index, 'name')">
+                <ng-template viewMode>{{entity.name}}</ng-template>
+                <ng-template editMode>
+                    <input [formControl]="getControl(index, 'name')" focusable editableOnEnter>
+                </ng-template>
+            </editable>
+        </td>
+        <td>
+            <editable (update)="updateField(index, 'isEditable')">
+                <ng-template viewMode>{{entity.isEditable}}</ng-template>
+                <ng-template editMode>
+                    <input type="checkbox" [formControl]="getControl(index, 'isEditable')">{{entity.isEditable}}
+                </ng-template>
+            </editable>
+        </td>
+    </tr>
+</table>
