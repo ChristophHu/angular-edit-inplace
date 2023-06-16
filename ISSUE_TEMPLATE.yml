@@ -1,0 +1,118 @@
+---
+name: "Bug report: PolOSK2"
+description: Übermittle einen Bericht und hilf uns die App zu verbessern.
+title: "[Problem]: "
+labels:
+  - bug
+  - 0. Needs triage
+body:
+  - type: markdown
+    attributes:
+      value: >
+        ### 👍 Danke, dass du unsere Appentwicklung unterstützen willst.
+
+        Beachte, dass die Abarbeitung der Fehler nach Maßgabe freier Mitarbeiterressourcen und Prioritäten stattfindet und es somit
+
+        zu Zeitverzögerungen kommen kann. 
+  - type: checkboxes
+    id: before-posting
+    attributes:
+      label: "⚠️ Dieser Beitrag erfüllt die folgende Punkte: ⚠️"
+      description: Alle Bedingungen sind **erforderlich**. Ihre Problemmeldung kann
+        geschlossen werden, wenn diese unvollständig oder als falsch befunden
+        wurde.
+      options:
+        - label: Es handelt sich um einen **bug** (Fehler), keine Frage zur Bedienung oder Konfiguration der App.
+          required: false
+        - label: Das Problem wurde noch **nicht** gemeldet.
+          required: false
+        - label: Die App **ist** in aktuellen Version vorliegend.
+          required: false
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Fehlerbeschreibung
+      description: >
+        Beschreiben sie das Problem möglichst genau, so dass es
+        reproduzierbar ist. Geben sie eventuelle Fehlermeldungen an.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Schritte zum Reproduzieren
+      description: |
+        Beschreiben Sie die Schritte zum Reproduzieren des Fehlers.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Erwartetes Verhalten
+      description: Beschreiben Sie stattdessen, was Sie erwartet haben.
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: PolOSK2 Version
+      description: Geben sie die Version der App an. Diese ist auffindbar im Titel des Hauptmenüs.
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: Android Version
+      description: |
+        Wählen sie die Version des Betriebssystems aus.
+      options:
+        - Android 9
+        - Android 10
+        - Android 11
+        - Android 12
+        - Android 13
+        - Android 14
+  - type: input
+    id: device
+    attributes:
+      label: Gerät
+      description: Welches Gerät wird für die Nutzung der App verwendet?
+      placeholder: ex. Samsung A32, Samsung Galaxy Tab S6
+    validations:
+      required: true
+  - type: dropdown
+    id: login
+    attributes:
+      label: Ist eine Anmeldung für die Nutzung der App notwendig?
+      options:
+        - Anmeldung ist notwendig um den Fehler zu reproduzieren.
+        - Keine Anmeldung nötig für die Nutzung der App.
+  - type: dropdown
+    id: login-check
+    attributes:
+      label:  "⚠️ Ist eine MAP-Anmeldung möglich? Ist das Konto zum Zeitpunkt des Problems gesperrt gewesen?: ⚠️"
+      description: |
+        Geben sie an, ob das MAP-Konto beim Auftreten des Fehlers gesperrt war oder nicht.
+      options:
+        - Konto ist/war gesperrt
+        - Konto ist nutzbar und nicht gesperrt
+  - type: dropdown
+    id: connectivity
+    attributes:
+      label:  "⚠️ Bestand zum Zeitpunkt des Fehlers eine ausreichend gute Verbindung zum Netz?: ⚠️"
+      description: |
+        Geben sie an, ob während des Auftretens des Fehlers eine stabile Verbindung zum Netz bestand.
+      options:
+        - Es lag eine stabile Verbindung (min. 4G,5G, WLAN) vor.
+        - Es bestand eine schlechte Verbindung (GPRS,Edge).
+        - Es bestand keine Verbindung. 
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Zusätzliche Informationen
+      description: Alle zusätzlichen Informationen im Zusammenhang mit dem Problem die
+        bisher noch nicht abgefragt wurden.
