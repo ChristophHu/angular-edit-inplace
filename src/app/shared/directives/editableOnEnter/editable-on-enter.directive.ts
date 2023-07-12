@@ -6,11 +6,9 @@ import { EditableComponent } from '../../components/editable/editable.component'
 })
 export class EditableOnEnterDirective {
 
-  constructor(private editable: EditableComponent) {
-  }
+  constructor(private editable: EditableComponent) { }
 
-  @HostListener('keyup.enter')
-  onEnter() {
+  @HostListener('keyup.enter') onEnter() {
     this.editable.toViewMode()
   }
 
